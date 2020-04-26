@@ -6,7 +6,7 @@
         <div class="alert alert-danger"><%= message %></div>
     <% } %>
       <!-- LOGIN FORM -->
-      <form action="/signup" method="post">
+      <form action="/signup" method="post" class="signForm">
 
           <div class="form-group">
               <label>User Name</label>
@@ -32,10 +32,11 @@
           <button type="submit" class="btn btn-warning btn-lg">Signup</button>
       </form>
 
-      <hr>
-
+    <section class="homebase">
       <p>Already have an account? <a href="/login">Login</a></p>
       <p>Or go <a href="/">home</a>.</p>
+    </section>
+
 
   </div>
   </div>
