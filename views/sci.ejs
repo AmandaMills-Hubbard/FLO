@@ -1,0 +1,91 @@
+<%- include('header'); -%>
+
+<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+<section id="main" class="wrapper">
+	<div class="container">
+
+		<header class="major special">
+			<h2>Sugar rockets</h2>
+		</header>
+
+		<a href="#" class="image fit"><img src="thumb.jpg" alt="" /></a>
+		<section class="struct">
+
+			<p>Remember that potassium nitrate is used as a poison, so either use a cheap, throw-away grinder or wash the living hell out of it before using again. And, again, always be mindful of heat sources — no open flames, or intense heating. Slow and steady wins the race, and still has both hands when it does so. </p>
+			<p>Once you’ve got your powdered sugar and powdered KNO3, you’ve got a choice. The quicker, easier, and safer way is to simply mix the ingredients by hand — don’t use the blender again, as the fuel-oxidizer mix is now technically complete. Shake well, for several minutes, to make sure you’ve got an even distribution of the two constituents, and move on to the next step in the process. On the other hand, you could also add another step by slowly (slowly!) heating the mixture until the sugar melts and suspends the potassium nitrate in a thick paste. This paste, when mixed well, offers more reliable distribution of the two chemicals than any dry-mix could hope to. Still… you’re technically heating rocket fuel. Use caution. Always wear protective gloves and goggles, and if possible do all your heating outdoors.</p>
+			<p>At this point you’ve got so-called “rocket candy.” This is a low-powered rocket fuel — which is to say, be very, very careful with it. The sugar here acts like the carbon-sulfur mixture in gunpowder, the potassium nitrate like the salt-peter. The violence of the reaction this simple mixture can create ought to illustrate just how much energy is trapped in food molecules — this is why you can run for an hour straight and still burn fewer calories than you ingested at breakfast.
+				<!-- <img src="img/rcandy.jpg" alt="Rocket candy Picture"> -->
+
+				Next comes the kitty litter — here, all you’re looking for is clay, so stick with the cheap stuff without additives. This heat-resistant material can be powdered and packed into our rocket tube, which will be made from open-ended plastic PVC pipe. This forms a strong and easy-to-make plug that will contain and direct our reaction. The trick is to create a marked “ramrod” of the appropriate width so you can use a hammer to really pack the clay down, across the whole width of the tube. By first putting in a clay plug, then the rocket candy (as a powder or a sludge), then another clay plug, you have created a working reaction chamber — but we still don’t have an outlet.</p>
+				<p>Slowly drill your hole, being sure to drill slowly (we just avoid all unnecessary heat!) and to get all the way down to the fuel to (but not through!) the far clay plug. Now all you need is a standard, slow-burning fuse, a launch pad, and a lighter. This is basically an idealized rocket engine, a very complex idea boiled down to its essentials — and it can still go like crazy. In the video above, we see a rocket rise thousands of feet into the air, all on the power of sugar and stump-killer.</p>
+			</section>
+		</div>
+	</section>
+
+	<!-- Form -->
+	<section>
+		<section class="addCom">
+			<h3>Add a comment</h3>
+			<form action="/comments"  method="post">
+				<div class="12u$">
+					<textarea name="msg" id="message" placeholder="Enter your message" rows="6"></textarea>
+				</div>
+				<input type="submit" value="Post">
+			</form>
+		</section>
+
+		<section class="seeCom">
+			<h3>Comments</h3>
+			<ul class="comments">
+				<% for(var i=0; i< comments.length; i++) {%>
+					<li>
+						<span name="username"><%=comments[i].username %></span>
+						<span name="msg"><%= comments[i].msg %></span>
+						<span name="vote"><%= comments[i].vote %></span>
+						<span><i class="fas fa-chevron-down" aria-hidden="true"></i></span>
+						<span><i class="fas fa-chevron-up" aria-hidden="true"></i></span>
+						<span><i class="fas fa-trash" aria-hidden="true"></i></span>
+					</li>
+
+
+					<% for( var j=0; j< replies.length; j++) {%>
+						<%  if ( comments[i]._id.equals( replies[j].commentId ) ){%>
+							<li>
+								<span name="username"><%=replies[j].username %></span>
+								<span name="reply"><%= replies[j].reply %></span>
+							</li>
+							<%}}%>
+							<li>
+								<form action="/reply"  method="post">
+									<textarea name="reply" rows="5" cols="20"> </textarea>
+									<input type="hidden" name="commentId" value="<%= comments[i]._id %>">
+									<input  class="reply" type="submit" value="reply">
+								</form>
+
+							</li>
+							<% } %>
+						</ul>
+					</section>
+				</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="container">
+						<ul class="icons">
+							<li><a href="#" class="icon fa-facebook"></a></li>
+							<li><a href="#" class="icon fa-twitter"></a></li>
+							<li><a href="#" class="icon fa-instagram"></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; Untitled</li>
+							<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
+							<li>Images: <a href="http://unsplash.com">Unsplash</a></li>
+						</ul>
+					</div>
+				</footer>
+
+
+				<script src="main.js"></script>
+
+			</body>
+			</html>

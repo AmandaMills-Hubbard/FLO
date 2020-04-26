@@ -1,0 +1,29 @@
+<%- include('header'); -%>
+
+<% if (message.length > 0) { %>
+    <div class="alert alert-danger"><%= message %></div>
+<% } %>
+        <!-- LOGIN FORM -->
+        <form class="logForm" action="/login" method="post">
+            <section">
+                <label>Email</label>
+                <input type="text" name="email">
+            </section>
+            <section >
+                <label>Password</label>
+                <input type="password" name="password">
+            </section>
+
+            <button type="submit" >Login</button>
+        </form>
+
+        <p>Need an account? <a href="/signup">Signup</a></p>
+    </section>
+  </section>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/main.js"></script>
+    <script src="side.js"></script>
+  </body>

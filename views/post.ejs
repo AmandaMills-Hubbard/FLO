@@ -1,0 +1,26 @@
+<%- include('header'); -%>
+
+<form action="/projectpic" enctype="multipart/form-data" method="POST" class="updateProPic">
+  <p>Upload a Picture</p>
+  <input type="text" name="topic" value="" placeholder="Add the topic">
+  <input type="text" name="title" value="" placeholder="Title">
+  <textarea name="article" rows="8" cols="80"></textarea>
+  <input type="file" name="file-to-upload" class="floatLeft" value="">
+  <input type="submit" class="uploadButton floatLeft" value=" Upload">
+</form>
+
+
+<section>
+  <p>Login or Signup:</p>
+
+  <a href="/login" class="btn btn-default"><span class="fa fa-user"></span>Login</a>
+  <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span>Signup</a>
+</section>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/skel.min.js"></script>
+<script src="js/util.js"></script>
+<script src="js/main.js"></script>
+<script src="side.js"></script>
+</body>
+</html>
