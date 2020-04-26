@@ -52,7 +52,9 @@ table {
   box-sizing: border-box;
 
 }
-
+#bodyC{
+		background-color: gray ;
+}
 a{
 	background: -webkit-linear-gradient(left,#151515, #5e11ff);
 	-webkit-background-clip:text;
@@ -81,4 +83,13 @@ a:hover{
 	float: left;
 	padding-top: 100px;
 	padding-left: 40%;
+}
+.signForm{
+	float: left;
+	padding-top: 100px;
+	padding-left: 40%;
+}
+
+.homebase{
+	clear: both;
 }
