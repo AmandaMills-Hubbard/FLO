@@ -1,0 +1,48 @@
+<%- include('header'); -%>
+
+
+			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="container">
+
+					<header class="major special">
+						<h2>Articles</h2>
+						<p>See the work of other users, and feel free to leave constructive feedback!</p>
+					</header>
+					<ul>
+				  <% for(var i=0; i<articles.length; i++) {%>
+				    <li>
+							<span><%= articles[i].title %></span>
+				      <img src="../<%= articles[i].imgPath%>">
+				      <span><%= articles[i].hero %></span>
+				    </li>
+				  <% } %>
+				  </ul>
+
+
+				  <a href="/profile">Return to Profile</a>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-facebook"></a></li>
+						<li><a href="#" class="icon fa-twitter"></a></li>
+						<li><a href="#" class="icon fa-instagram"></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Untitled</li>
+						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
+						<li>Images: <a href="http://unsplash.com">Unsplash</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+	
+		<script src="side.js"></script>
+
+	</body>
+</html>

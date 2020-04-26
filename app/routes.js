@@ -18,7 +18,7 @@ module.exports = function(app, passport, db, multer, ObjectId) {
 
   // process the login form
   app.post('/login', passport.authenticate('local-login', {
-    successRedirect : '/',
+    successRedirect : '/profile',
     failureRedirect : '/login',
     failureFlash : true // allow flash messages
   }));
@@ -36,8 +36,11 @@ module.exports = function(app, passport, db, multer, ObjectId) {
     failureFlash : true // allow flash messages
   }));
 
+  app.get("/profile", isLoggedIn, function(req, res) {
+    res.render("profile.ejs");
+  });
 
-  app.get( "/sci", isLoggedIn, function(req, res){
+  app.get( "/sci",function(req, res){
     let uId = ObjectId(req.session.passport.user)
     db.collection("users").findOne({'_id' : uId}, function(err, users) {
       if (err) throw err;
@@ -76,6 +79,7 @@ module.exports = function(app, passport, db, multer, ObjectId) {
   app.get("/engineering", function(req, res) {
     res.render("engi.ejs");
   });
+
 
   app.post("/comments", (req, res) => {
     let uId = ObjectId(req.session.passport.user)
@@ -147,73 +151,45 @@ module.exports = function(app, passport, db, multer, ObjectId) {
           res.send(result)
         })
       })
+
+
       //// code for multer upload picture for an article/ or post
-      app.get( "/articles", function(req, res){
-        db.collection("user").find().toArray((err, result) => {
+
+// All articles PAGE =========================
+  app.get( "/articles", function(req, res){
+        db.collection("demo").find().toArray((err, result) => {
           if (err) return console.log(err)
-          res.render("post.ejs", {
-            users: result
+          res.render("articles.ejs", {
+            user: req.user,
+            articles: result
           })
         })
       });
 
-      var upload = multer({storage: storage});
-      var storage = multer.diskStorage({
-        destination: (req, file, cb) => {
-          cb(null, 'public/images/uploads')
-        },
-        filename: (req, file, cb) => {
-          cb(null, file.fieldname + '-' + Date.now() + ".png")
-        }
-      });
-
-      app.post('/projectpic', upload.single('file-to-upload'), (req, res) => {
-        let uId = ObjectId(req.session.passport.user)
-
-        //insertDocuments(db, req, 'images/uploads/' + req.file.filename, () => {});
-        db.collection('users').find({"_id": uId}).toArray((err, result) => {
-          if (err) return console.log(err)
-          uName = result[0].local.userName
-          db.collection('requestPosts').save({userId : uId, username: username, topic: req.body.topic, article: req.body.article, title: req.body.title, request: req.body.request, postImg: 'images/uploads/' + req.file.filename}, (err, result) => {
-            if (err) return console.log(err)
-            console.log('saved to database')
-            res.redirect('/manageRequests')
-          })
-        })
-      })
-      var insertDocuments = function(db, req, filePath, callback) {
-        var collection = db.collection('users');
-        var uId = ObjectId(req.session.passport.user)
-        collection.findOneAndUpdate({
-          "_id": uId
-        }, {
-          $set: {
-            "local.imageUrl": filePath
-          }
-        }, {
-          sort: {
-            _id: -1
-          },
-          upsert: false
-        }, (err, result) => {
-          if (err) return res.send(err)
-          callback(result)
-        })
+      // SET STORAGE
+    var storage = multer.diskStorage({
+      destination: function (req, file, cb) {
+        cb(null, 'public/images/uploads')
+      },
+      filename: function (req, file, cb) {
+        cb(null, file.fieldname + '-' + Date.now())
       }
+    })
+    var upload = multer({ storage: storage });
+/////// end
+//Uploading files
+app.post('/up', upload.single('file-to-upload'), (req, res, next) => {
+  let uId = ObjectId(req.session.passport.user)
+  db.collection('demo').save({posterId: uId, title: req.body.title, hero: req.body.hero, imgPath: 'images/uploads/' + req.file.filename}, (err, result) => {
+
+    if (err) return console.log(err)
+    console.log('saved to database')
+    res.redirect('/articles')
+  })
+});
 
 
-
-      app.post('/projectpic', upload.single('file-to-upload'), (req, res, next) => { // this post new information into the ? DATABASE ? which is to upload a picture
-        let uId = ObjectId(req.session.passport.user) // we make sure the userId of the image is going to be saved along with it when added to the database
-        db.collection('demo').save({posterId: uId, caption: req.body.caption, vote: 0, imgPath: 'images/uploads/' + req.file.filename}, (err, result) => { // WHERE IS GETTING THESE NUMBERS
-
-          if (err) return console.log(err)
-          console.log('saved to database')
-          res.redirect('/post') // redirect method can be applied once the sumbit button is hit
-        })
-      });
-
-
+/////end
       function isLoggedIn(req, res, next) {
         if (req.isAuthenticated())
         return next();

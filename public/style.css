@@ -78,18 +78,27 @@ a:hover{
 	font-size: 1.5em;
 }
 
-
-.logForm{
+.weirdo{
+	clear: both;
+	padding-top: 100px;
+}
+.logForm, .signForm {
 	float: left;
 	padding-top: 100px;
 	padding-left: 40%;
 }
-.signForm{
-	float: left;
-	padding-top: 100px;
-	padding-left: 40%;
+.signForm input, .logForm input{
+color: lightgray;
 }
 
 .homebase{
 	clear: both;
+}
+/* For the homepage sections */
+#one, #two{
+	background-color: lightgray;
+}
+#topper{
+   position: fixed;
+	 padding-bottom: 30px !important;
 }
