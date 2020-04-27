@@ -8,6 +8,8 @@
 *CSS3
 *JavaScript
 *Node.js
+*Express
+*MongoDB
 
 ## Go to https://stem-demo-day.herokuapp.com/ to see the full site
 
