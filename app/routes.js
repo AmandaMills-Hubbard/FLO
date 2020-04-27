@@ -37,7 +37,12 @@ module.exports = function(app, passport, db, multer, ObjectId) {
   }));
 
   app.get("/profile", isLoggedIn, function(req, res) {
-    res.render("profile.ejs");
+    let uId = ObjectId(req.session.passport.user)
+      db.collection("users").findOne({'_id' : uId}, function(err, users) {
+    res.render("profile.ejs", {
+      users : users
+    });
+  })
   });
 
   app.get( "/sci",function(req, res){
@@ -80,8 +85,15 @@ module.exports = function(app, passport, db, multer, ObjectId) {
     res.render("engi.ejs");
   });
 
+  app.delete('/messages', (req, res) => {
 
-  app.post("/comments", (req, res) => {
+    db.collection('comments').findOneAndDelete({_id: ObjectId(req.body._id), msg: req.body.msg}, (err, result) => {//looks at messages collection,s finds and deletes.
+
+      if (err) return res.send(500, err)//if error, send error
+      res.send('Message deleted!')
+    })
+  })
+    app.post("/comments", (req, res) => {
     let uId = ObjectId(req.session.passport.user)
     db.collection("users").findOne({'_id' : uId}, function(err, users) {
       db.collection("comments").save({username: users.local.username, msg: req.body.msg, vote: 0 }, (err, result) => {
@@ -164,6 +176,10 @@ module.exports = function(app, passport, db, multer, ObjectId) {
             articles: result
           })
         })
+      });
+  app.get( "/post", function(req, res){
+      res.render("post.ejs")
+
       });
 
       // SET STORAGE

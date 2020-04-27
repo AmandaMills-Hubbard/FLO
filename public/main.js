@@ -1,8 +1,8 @@
-var downvote = document.getElementsByClassName("fa-chevron-down");
-var upvote = document.getElementsByClassName("fa-chevron-up");
-var trash = document.getElementsByClassName("fa-trash");
-var reply = document.getElementsByClassName("reply");
-
+let downvote = document.getElementsByClassName("fa-chevron-down");
+let upvote = document.getElementsByClassName("fa-chevron-up");
+let trash = document.getElementsByClassName("fa-trash");
+let reply = document.getElementsByClassName("reply");
+let toggleLD = document.querySelector(".toggleLD");
 
 
 
@@ -56,10 +56,13 @@ Array.from(downvote).forEach(function(element) {
 });
 
 Array.from(trash).forEach(function(element) {
-  element.addEventListener('click', function(){
-    const _id = this.parentNode.parentNode.childNodes[1].innerText
+  element.addEventListener('click', function(e){
+    e.preventDefault()
+
+    const _id = this.parentNode.parentNode.childNodes[11].dataset.id
+
     const msg = this.parentNode.parentNode.childNodes[3].innerText
-    fetch('comments', {
+    fetch('messages', {
       method: 'delete',
       headers: {
         'Content-Type': 'application/json'
@@ -69,7 +72,15 @@ Array.from(trash).forEach(function(element) {
         'msg': msg
       })
     }).then(function (response) {
-      window.location.reload() //take the response and reload the page
+      window.location.reload() 
     })
   });
 });
+
+// function color() {
+//   var element = document.body;
+//   element.classList.toggle("dark-mode");
+// }
+// toggler.addEventListener('click', () => {
+//     fullscreen.classList.toggle("light");
+// })

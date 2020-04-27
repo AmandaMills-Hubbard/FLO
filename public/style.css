@@ -52,6 +52,29 @@ table {
   box-sizing: border-box;
 
 }
+.toggleLD {
+    border-radius: 100px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.circle {
+    background-color: orange;
+    height: 20px;
+    width: 20px;
+    border-radius: 100px;
+}
+.toggleLD {
+    transition: all 0.3s ease-in-out;
+}
+
+.circle {
+    /* rest of the code.. */
+    transition: all 0.3s ease-in-out
+}
+.dark-mode {
+  background-color: #121212;
+}
 #bodyC{
 		background-color: gray ;
 }

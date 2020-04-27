@@ -11,17 +11,26 @@
 
         <!-- LOCAL INFORMATION -->
         <div class="col-sm-6">
+          <h3><span class="fa fa-user"></span> Your Info</h3>
 
-                <h3><span class="fa fa-user"></span> Your Info</h3>
+          <% if (users.local.email) { %>
+                <p>
+                    <strong>email</strong>: <%= users.local.email %>
+                    <strong>Username</strong>: <%= users.local.username %>
+                </p>
 
+                <a href="/unlink/local" class="btn btn-default">Remove account</a>
+            <% } else { %>
+                <a href="/connect/local" class="btn btn-default">Connect Local</a>
+            <% } %>
 
         </div>
 
-          <a href="/articles" action="/articles"><h2>Add an Article or show your work!</h2></a>
+          <a href="/post" action="/post"><h3>Add an Article or show your work.</h3></a>
 
 </div>
 
 
-  <script src="side.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
