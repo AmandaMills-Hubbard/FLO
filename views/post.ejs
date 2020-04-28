@@ -1,22 +1,15 @@
 <%- include('header'); -%>
+<section class="formP">
+  <form action="/up" enctype="multipart/form-data" method="POST" class="updateProPic">
+    <p>Upload an Article</p>
 
-<form action="/up" enctype="multipart/form-data" method="POST" class="updateProPic">
-  <p>Upload an Article</p>
+    <input class="titleP" type="text" name="title" value="" placeholder="Title">
+    <textarea name="hero" rows="8" cols="80" class="heroP" placeholder="Write your article here"></textarea>
+    <input type="file" name="file-to-upload" class="filePic" value="">
+    <input type="submit" class="upPo" value=" Upload">
+  </form>
 
-  <input type="text" name="title" value="" placeholder="Title">
-  <textarea name="hero" rows="8" cols="80"></textarea>
-  <input type="file" name="file-to-upload" class="floatLeft" value="">
-  <input type="submit" class="uploadButton floatLeft" value=" Upload">
-</form>
-
-<section>
-  <p>Login or Signup:</p>
-
-  <a href="/login" class="btn btn-default"><span class="fa fa-user"></span>Login</a>
-  <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span>Signup</a>
 </section>
 
 
-<script src="side.js"></script>
-</body>
-</html>
+<%- include('footer'); -%>

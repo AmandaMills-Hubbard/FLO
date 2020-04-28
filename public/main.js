@@ -9,7 +9,7 @@ let toggleLD = document.querySelector(".toggleLD");
 Array.from(upvote).forEach(function(element) {
   element.addEventListener('click', function(){
 
-    const _id = this.parentNode.parentNode.childNodes[1].innerText;
+    const _id = this.parentNode.parentNode.childNodes[11].dataset.id
     console.log(_id);
     const msg = this.parentNode.parentNode.childNodes[3].innerText;
     let vote = parseFloat(this.parentNode.parentNode.childNodes[5].innerText) +1;
@@ -35,7 +35,7 @@ Array.from(upvote).forEach(function(element) {
 
 Array.from(downvote).forEach(function(element) {
   element.addEventListener('click', function(){
-    const _id = this.parentNode.parentNode.childNodes[1].innerText;
+    const _id = this.parentNode.parentNode.childNodes[11].dataset.id;
 
     fetch('/downvote', {
       method: 'put',
@@ -60,7 +60,6 @@ Array.from(trash).forEach(function(element) {
     e.preventDefault()
 
     const _id = this.parentNode.parentNode.childNodes[11].dataset.id
-
     const msg = this.parentNode.parentNode.childNodes[3].innerText
     fetch('messages', {
       method: 'delete',
@@ -72,15 +71,12 @@ Array.from(trash).forEach(function(element) {
         'msg': msg
       })
     }).then(function (response) {
-      window.location.reload() 
+      window.location.reload()
     })
   });
 });
 
-// function color() {
-//   var element = document.body;
-//   element.classList.toggle("dark-mode");
-// }
-// toggler.addEventListener('click', () => {
-//     fullscreen.classList.toggle("light");
-// })
+
+toggleLD.addEventListener('click', () => {
+    fullscreen.classList.toggleLD("light");
+})

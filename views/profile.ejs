@@ -1,17 +1,11 @@
 <%- include('header'); -%>
 
-<div class="container">
-
-    <div class="page-header text-center">
-        <h1><span ></span>Your Profile</h1>
-        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
-    </div>
-
-    <div class="row">
-
+    <section class="profile">
+      <h1>Your Profile</h1>
+      <span><a href="/">Logout</a></span>
         <!-- LOCAL INFORMATION -->
-        <div class="col-sm-6">
-          <h3><span class="fa fa-user"></span> Your Info</h3>
+        <section class="userI">
+          <h3><i class="fas fa-user-ninja"></i> Your Info</h3>
 
           <% if (users.local.email) { %>
                 <p>
@@ -24,13 +18,11 @@
                 <a href="/connect/local" class="btn btn-default">Connect Local</a>
             <% } %>
 
-        </div>
+        </section>
 
           <a href="/post" action="/post"><h3>Add an Article or show your work.</h3></a>
 
-</div>
+</section>
 
 
-  <script src="main.js"></script>
-</body>
-</html>
+  <%- include('footer'); -%>

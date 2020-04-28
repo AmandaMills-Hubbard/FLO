@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+* {
+	/* margin: 0px;
+  padding: 0px;*/
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html{
+	height: 100vh;
+}
+body{
+  background-color: rgb(94, 17, 255, .09);
+	margin: 0;
+}
+
+header{
+  background-color: #5538c7;
+  width: 100%;
+  height: 10vh;
+}
+
+.logo{
+  width: 45%;
+  float: left;
+}
+
+.logo a{
+  text-decoration: none;
+  color: white;
+  font-size: 55px;
+  font-weight: bold;
+  padding: 0rem 5rem;
+}
+
+.loginSignupLinks{
+  float: left;
+  width: 50%;
+}
+
+.loginSignupLinks a{
+  text-decoration: none;
+  color: white;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  float: right;
+  padding: 1rem 4rem 1rem 0rem;
+}
+
+.loginSignupLinks a:hover{
+  color: #808080;
+}
+
+.hero{
+	height: 80vh;
+}
+.homePageGreeting{
+  /* width: 70%; */
+	clear: both;
+  text-align: left;
+  padding: 4rem 0rem 0rem 4rem;
+
+}
+
+.homePageGreeting h1{
+  color: rgb(94, 17, 255);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 55px;
+  font-weight: bold;
+	margin-top: 0;
+	text-align: left;
+
+}
+
+.homePageGreeting h4{
+  color: black;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.homePageGreeting p{
+  color: black;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  /* margin-top: 1rem; */
+}
+
+.homePageSignUpToday{
+  margin-left: 4rem;
+}
+
+.homePageSignUpToday h2{
+  color: black;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.homePageSignUpToday h3{
+  color: black;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 3rem;
+}
+
+footer{
+  background-color: #5538c7;
+  width: 100%;
+  height: 10vh;
+  text-align: center;
+  color: white;
+  font-family: 'Noto Sans JP', sans-serif;
+  margin-top: 10rem;
+  padding-top: 1.2rem;
+}
+
+.loginFormPage{
+  display: flex;
+  justify-content: center;
+  height: 35rem;
+}
+
+.loginForm{
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rem;
+  font-size: 20px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: bold;
+}
+
+.loginForm input{
+  font-size: 30px;
+  /* margin: .5rem 0rem; */
+  width: 30rem;
+}
+
+.loginForm button{
+  width: 4rem;
+  font-size: 25px;
+  background-color: #5E51D1;
+  color: white;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: bold;
+  border-radius: 3px;
+  /* margin-top: 1rem; */
+}
+
+.weirdo{
+	clear: both;
+	padding-top: 100px;
+}
+.profile{
+	padding-top: 100px;
+	align-items: center;
+}
+.profile strong{
+font-size: 1.5em;
+padding-bottom: 10px;
+}

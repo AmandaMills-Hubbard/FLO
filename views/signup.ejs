@@ -1,50 +1,41 @@
-<%- include('header'); -%>
-  <div class="container">
-  <div class="col-sm-6 col-sm-offset-3">
-
-    <% if (message.length > 0) { %>
-        <div class="alert alert-danger"><%= message %></div>
-    <% } %>
-      <!-- LOGIN FORM -->
-      <form action="/signup" method="post" class="signForm">
-
-          <div class="form-group">
-              <label>User Name</label>
-              <input type="text" class="form-control" name="username">
-          </div>
-          <div class="form-group">
-              <label>First Name</label>
-              <input type="text" class="form-control" name="firstname">
-          </div>
-          <div class="form-group">
-              <label>Last Name</label>
-              <input type="text" class="form-control" name="lastname">
-          </div>
-          <div class="form-group">
-              <label>Email</label>
-              <input type="text" class="form-control" name="email">
-          </div>
-          <div class="form-group">
-              <label>Password</label>
-              <input type="password" class="form-control" name="password">
-          </div>
-
-          <button type="submit" class="btn btn-warning btn-lg">Signup</button>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flo</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> -->
+</head>
+<body >
+  <header>
+    <nav>
+      <section class="logo">
+        <a href="/"><img src="images/topL.png" alt="Go to Home Page"></a>
+      </section>
+      <section class="loginSignupLinks">
+        <a href="/login">login</a>
+        <a href="/signup">signup</a>
+      </section>
+    </nav>
+  </header>
+    <section class="loginFormPage">
+      <form class="loginForm" action="/signup" method="post">
+        <label for="">Username:</label>
+        <input type="text" name="username" value="">
+        <label for="">First Name:</label>
+        <input type="text" name="firstname" value="">
+        <label for="">Last Name:</label>
+        <input type="text" name="lastname" value="">
+        <label for="">Email:</label>
+        <input type="email" name="email" value="">
+        <label for="">Password:</label>
+        <input type="password" name="password" value="">
+        <button type="submit" name="button">Submit</button>
       </form>
-
-    <section class="homebase">
-      <p>Already have an account? <a href="/login">Login</a></p>
-      <p>Or go <a href="/">home</a>.</p>
     </section>
-
-
-  </div>
-  </div>
-
-  <script src="js/jquery.min.js"></script>
-  <script src="js/skel.min.js"></script>
-  <script src="js/util.js"></script>
-  <script src="js/main.js"></script>
-  <script src="side.js"></script>
+  <footer>&copy Jessie 2020</footer>
+  <script src="main.js"></script>
 </body>
 </html>

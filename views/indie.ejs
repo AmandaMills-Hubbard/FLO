@@ -1,0 +1,103 @@
+<!dOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flo</title>
+  <link rel="shortcut icon" href="/logo.png" />
+  <link rel="stylesheet" href="/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/0ea786f096.js" crossorigin="anonymous"></script>
+</head>
+<body>
+ <header>
+    <nav>
+      <section class="logo">
+        <a href="/"><img src="/images/topL.png" alt="Go to Home Page"></a>
+      </section>
+      <section class="loginSignupLinks">
+        <a href="/profile" action="/profile"> <i class="fas fa-user-ninja"></i> Go to profile</a>
+        <a href="/" action="/">Home</a>
+        <a href="/signup">Logout</a>
+        <a href="/sci"action="/sci">SCIENCE</a>
+        <a href="/tech"action="/tech">TECH</a>
+        <a href="/articles" action="/articles"> Articles</a>
+
+      </section>
+    </nav>
+  </header>
+
+<ul class="articleI">
+<% for(var i=0; i<demo.length; i++) {%>
+  <li>
+    <h1><%= demo[i].title %></h1>
+
+    <img src="../<%= demo[i].imgPath%>">
+    <span><%= demo[i].hero %></span>
+  </li>
+<% } %>
+</ul>
+
+<section>
+
+<div class="bigIn">
+
+
+
+  <section class="addCom">
+    <h3>Add a comment</h3>
+    <form action="/commentA"  method="post">
+      <div class="12u$">
+        <textarea name="msg" id="message" placeholder="Enter your message" rows="6"></textarea>
+      </div>
+      <input class="hide" type="text" name="postId" value="<%=demo[0]._id%>">
+      <input type="submit" value="Post">
+    </form>
+  </section>
+
+
+  <section class="seeCom">
+    <h3>Comments</h3>
+    <ul class="commentA">
+      <% for(var i=0; i< commentA.length; i++) {%>
+        <li>
+          <span name="username"><%=commentA[i].username %></span>
+          <span name="msg"><%= commentA[i].msg %></span>
+          <span name="vote"><%= commentA[i].vote %></span>
+
+       <% if(commentA[i].username == users.local.username){%>
+          <span class="hide" data-id="<%= commentA[i]._id %>"><i  class="fas fa-trash" aria-hidden="true"></i></span>
+          <%}%>
+        </li>
+
+
+        <% for( var j=0; j< replies.length; j++) {%>
+          <%  if ( commentA[i]._id.equals( replies[j].commentAId ) ){%>
+            <li>
+              <span name="username"><%=replies[j].username %></span>
+              <span name="replyA"><%= replies[j].replyA %></span>
+            </li>
+            <%}}%>
+
+            <li>
+              <form action="/replyA"  method="post">
+                <textarea name="replyA" rows="5" cols="20"> </textarea>
+                <input type="hidden" name="commentAId" value="<%= commentA[i]._id %>">
+                <input class="hide" type="text" name="postId" value="<%=demo[0]._id%>">
+                <input  class="replyA" type="submit" value="reply">
+              </form>
+
+            </li>
+
+            <% } %>
+          </ul>
+        </section>
+        </div>
+      </section>
+      <!-- Footer -->
+      <footer>&copy Jessie 2020</footer>
+
+      <script src="/main.js"></script>
+
+      </body>
+      </html>
