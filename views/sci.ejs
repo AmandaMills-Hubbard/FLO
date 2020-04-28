@@ -23,7 +23,12 @@
 	</section>
 
 	<!-- Form -->
+
+
 	<section>
+		<% if (users !== "notin") { %>
+
+
 		<section class="addCom">
 			<h3>Add a comment</h3>
 			<form action="/comments"  method="post">
@@ -33,6 +38,7 @@
 				<input type="submit" value="Post">
 			</form>
 		</section>
+			<% } %>
 
 		<section class="seeCom">
 			<h3>Comments</h3>
@@ -44,10 +50,12 @@
 						<span name="vote"><%= comments[i].vote %></span>
 						<span><i class="fas fa-chevron-down" aria-hidden="true"></i></span>
 						<span><i class="fas fa-chevron-up" aria-hidden="true"></i></span>
+				 <% if(comments[i].username == users.local.username){%>
 						<span data-id="<%= comments[i]._id %>"><i  class="fas fa-trash" aria-hidden="true"></i></span>
+						<%}%>
 					</li>
 
-
+					<% if (users.local.email) { %>
 					<% for( var j=0; j< replies.length; j++) {%>
 						<%  if ( comments[i]._id.equals( replies[j].commentId ) ){%>
 							<li>
@@ -55,6 +63,7 @@
 								<span name="reply"><%= replies[j].reply %></span>
 							</li>
 							<%}}%>
+
 							<li>
 								<form action="/reply"  method="post">
 									<textarea name="reply" rows="5" cols="20"> </textarea>
@@ -64,28 +73,9 @@
 
 							</li>
 							<% } %>
+							<% } %>
 						</ul>
 					</section>
 				</section>
 
-				<!-- Footer -->
-				<footer id="footer">
-					<div class="container">
-						<ul class="icons">
-							<li><a href="#" class="icon fa-facebook"></a></li>
-							<li><a href="#" class="icon fa-twitter"></a></li>
-							<li><a href="#" class="icon fa-instagram"></a></li>
-						</ul>
-						<ul class="copyright">
-							<li>&copy; Untitled</li>
-							<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
-							<li>Images: <a href="http://unsplash.com">Unsplash</a></li>
-						</ul>
-					</div>
-				</footer>
-
-
-				<script src="main.js"></script>
-
-			</body>
-			</html>
+			<%- include('footer'); -%>

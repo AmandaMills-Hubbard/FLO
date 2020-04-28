@@ -1,48 +1,25 @@
 <%- include('header'); -%>
 
 
-			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
-
 		<!-- Main -->
-			<section id="main" class="wrapper">
-				<div class="container">
+			<section class="artM" >
 
-					<header class="major special">
+					<header >
 						<h2>Articles</h2>
 						<p>See the work of other users, and feel free to leave constructive feedback!</p>
 					</header>
 					<ul>
 				  <% for(var i=0; i<articles.length; i++) {%>
 				    <li>
-							<span><%= articles[i].title %></span>
-				      <img src="../<%= articles[i].imgPath%>">
-				      <span><%= articles[i].hero %></span>
+							<a href="/article/<%= articles[i]._id%>">	<span><%= articles[i].title %></span></a>
+							<div class="noArt">
+								<img class="" src="../<%= articles[i].imgPath%>">
+							 <span><%= articles[i].hero %></span>
+							</div>
+
 				    </li>
 				  <% } %>
 				  </ul>
+</section>
 
-
-				  <a href="/profile">Return to Profile</a>
-
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="container">
-					<ul class="icons">
-						<li><a href="#" class="icon fa-facebook"></a></li>
-						<li><a href="#" class="icon fa-twitter"></a></li>
-						<li><a href="#" class="icon fa-instagram"></a></li>
-					</ul>
-					<ul class="copyright">
-						<li>&copy; Untitled</li>
-						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
-						<li>Images: <a href="http://unsplash.com">Unsplash</a></li>
-					</ul>
-				</div>
-			</footer>
-
-		<!-- Scripts -->
-	
-		<script src="side.js"></script>
-
-	</body>
-</html>
+	<%- include('footer'); -%>

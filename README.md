@@ -1,15 +1,13 @@
-## A website desigined for peopole who want to learn more about technology before moving on to more complex problems.
+## Installation
 
-![img](logo.png)
+1. Clone repo
+2. run `npm install`
 
-## Languages used
+## Usage
 
-*HTML
-*CSS3
-*JavaScript
-*Node.js
-*Express
-*MongoDB
+1. run `node server.js`
+2. Navigate to `localhost:8080`
 
-## Go to https://stem-demo-day.herokuapp.com/ to see the full site
+## Credit
 
+Modified from Scotch.io's auth tutorial

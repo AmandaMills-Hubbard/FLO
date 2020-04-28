@@ -1,29 +1,32 @@
-<%- include('header'); -%>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flo</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
+</head>
+<body>
 
-<% if (message.length > 0) { %>
-    <div class="alert alert-danger"><%= message %></div>
-<% } %>
-        <!-- LOGIN FORM -->
-        <form class="logForm" action="/login" method="post">
-            <section">
-                <label>Email</label>
-                <input type="text" name="email">
-            </section>
-            <section >
-                <label>Password</label>
-                <input type="password" name="password">
-            </section>
-
-            <button type="submit" >Login</button>
-        </form>
-
-        <p>Need an account? <a href="/signup">Signup</a></p>
+  <header>
+    <nav>
+      <section class="logo">
+        <a href="/"><img src="images/topL.png"</a>
+      </section>
+      <section class="loginSignupLinks">
+        <a href="/login">login</a>
+        <a href="/signup">signup</a>
+      </section>
+    </nav>
+  </header>
+    <section class="loginFormPage">
+      <form class="loginForm" action="/login" method="post">
+        <label for="">Email:</label>
+        <input type="text" name="email" value="">
+        <label for="">Password:</label>
+        <input type="password" name="password" value="">
+        <button type="submit" name="button">Submit</button>
+      </form>
     </section>
-  </section>
-
-    <script src="js/jquery.min.js"></script>
-    <script src="js/skel.min.js"></script>
-    <script src="js/util.js"></script>
-    <script src="js/main.js"></script>
-    <script src="side.js"></script>
-  </body>
+<%- include('footer'); -%>

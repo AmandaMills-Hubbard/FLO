@@ -1,103 +1,226 @@
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
 *, *:before, *:after {
+	margin: 0px;
+	padding: 0px;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
-  box-sizing: border-box;
+	box-sizing: border-box;
 
 }
-.toggleLD {
-    border-radius: 100px;
-    padding: 10px;
-    cursor: pointer;
+
+html{
+	height: 100vh;
+}
+body{
+	background-color: rgb(94, 17, 255, .09);
+	margin: 0;
 }
 
-.circle {
-    background-color: orange;
-    height: 20px;
-    width: 20px;
-    border-radius: 100px;
+header{
+	background-color: #5538c7;
+	width: 100%;
+	height: 10vh;
 }
-.toggleLD {
-    transition: all 0.3s ease-in-out;
+header a{
+	float: left;
 }
+/* .logo{
+width: 45%;
+float: left;
+} */
 
-.circle {
-    /* rest of the code.. */
-    transition: all 0.3s ease-in-out
-}
-.dark-mode {
-  background-color: #121212;
-}
-#bodyC{
-		background-color: gray ;
-}
-a{
-	background: -webkit-linear-gradient(left,#151515, #5e11ff);
-	-webkit-background-clip:text;
-
+.logo a{
 	text-decoration: none;
-	font-size: 1.5em;
+	color: white;
+	font-weight: bold;
+	margin: 0rem 5rem;
 }
-a:hover{
-	background: -webkit-linear-gradient(left,#5e11ff, #151515);
-  -webkit-background-clip:text;
-  text-shadow: 1px 1px black;
+.logo a img{
+	height: 85px;
 }
-.up{
-	margin-top: 10%;
+
+.loginSignupLinks{
+	float: left;
+	width: 50%;
 }
-.struct{
+
+.loginSignupLinks a{
+	text-decoration: none;
+	color: white;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-size: 25px;
+	font-weight: bold;
+	float: right;
+	padding-right: 35px;
+}
+
+.loginSignupLinks a:hover{
+	color: #808080;
+}
+.hero{
+	height: 80vh;
+}
+.homePageGreeting{
+	clear: both;
+	text-align: left;
+	margin: 4rem 0rem 0rem 4rem;
+}
+
+.homePageGreeting h1{
+	color: rgb(94, 17, 255);
+	font-family: 'Noto Sans JP', sans-serif;
+	font-size: 55px;
+	font-weight: bold;
+	text-align: left;
+}
+
+.homePageGreeting h4{
+	color: black;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-size: 30px;
+	font-weight: bold;
+	margin-top: 1rem;
+}
+
+.homePageGreeting p{
+	color: black;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.homePageSignUpToday{
+	margin-left: 4rem;
+}
+
+.homePageSignUpToday h2{
+	color: black;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-size: 40px;
+	font-weight: bold;
+}
+
+.homePageSignUpToday h3{
+	color: black;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-size: 30px;
+	font-weight: bold;
+	margin-top: 3rem;
+}
+.userI{
+	padding-left: 50px;
+	padding-bottom: 50px;
+	width: 50%;
+	margin-bottom: -116px;
+}
+footer{
+	background-color: #5538c7;
+	width: 100%;
+	height: 10vh;
+	text-align: center;
+	color: white;
+	font-family: 'Noto Sans JP', sans-serif;
+	margin-top: 10rem;
+	padding-top: 1.2rem;
+	clear: both;
+}
+
+.loginFormPage{
+	display: flex;
+	justify-content: center;
+}
+
+.loginForm{
+	display: flex;
+	flex-direction: column;
+	margin-top: 5rem;
+	font-size: 20px;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-weight: bold;
+}
+
+.loginForm input{
+	font-size: 30px;
+	width: 30rem;
+}
+
+.loginForm button{
+	width: 7rem;
+	font-size: 25px;
+	background-color: #5E51D1;
+	color: white;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-weight: bold;
+	border-radius: 3px;
+}
+
+.formP{
+	padding-top: 50px;
+	padding-bottom: 50px;
+	font-family: 'Noto Sans JP', sans-serif;
+	float: left;
+	margin-left: 15%;
+}
+.formP p{
+	margin-left: 45%;
+	font-size: 2em;
+	font-weight: bold;
+	padding-bottom: 20px;
+}
+
+.titleP{
+	float: right;
+	margin-right: 35%;
+	border: 1px solid #5538c7;
+	border-radius: 3px;
+}
+
+.heroP{
+	border-radius: 5px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	margin-left: 33%;
+	border: 2px solid #5538c7;
+}
+.filePic{
+	float: right;
+	margin-right: 25%;
+	border: 1px solid #5538c7;
+	border-radius: 3px;
+}
+.upPo{
+    border: 1px solid #5538c7;
+    border-radius: 3px;
+    margin-left: 58%;
+
+}
+.articleI{
+	margin-top: 100px;
+	border-radius: 5px;
+    margin-left: 33%;
+    border: 2px solid #5538c7;
+    list-style: none;
+    width: 625px;
+		font-family: 'Noto Sans JP', sans-serif;
+}
+
+.articleI h1{
+	padding-left: 190px;
+}
+.articleI img{
+	padding-left: 190px;
+	height: 200px;
+}
+
+
+.articleI span{
+	padding-top: 50px;
+	margin-left: 45%;
 	font-size: 1.5em;
 }
 
-#mstate{
+
+.struct{
 	font-size: 1.5em;
 }
 
@@ -105,23 +228,46 @@ a:hover{
 	clear: both;
 	padding-top: 100px;
 }
-.logForm, .signForm {
-	float: left;
+.profile{
 	padding-top: 100px;
-	padding-left: 40%;
+	align-items: center;
+	font-family: 'Noto Sans JP', sans-serif;
 }
-.signForm input, .logForm input{
-color: lightgray;
+.profile strong{
+	font-size: 1.5em;
+	padding-bottom: 10px;
 }
-
-.homebase{
-	clear: both;
+.profile h1, .profile span{
+	margin-left: 45%;
 }
-/* For the homepage sections */
-#one, #two{
-	background-color: lightgray;
+.profile a h3{
+	margin-left: 75%;
 }
-#topper{
-   position: fixed;
-	 padding-bottom: 30px !important;
+.artM{
+	font-family: 'Noto Sans JP', sans-serif;
+}
+.artM header{
+	display: inline;
+}
+.artM h2{
+	margin-left: 45%;
+}
+ .artM p{
+font-size: 1.2em;
+	margin-left: 30%;
+}
+.artM a{
+	margin-top: 100px;
+	margin-left: 43%;
+	color: #5538c7;
+	font-size: 1.5em;
+}
+.bigIn{
+	font-family: 'Noto Sans JP', sans-serif;
+}
+.noArt{
+	display: none;
+}
+.hide{
+display: none;
 }

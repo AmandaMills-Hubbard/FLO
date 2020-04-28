@@ -31,7 +31,7 @@ module.exports = function(app, passport, db, multer, ObjectId) {
 
   // process the signup form
   app.post('/signup', passport.authenticate('local-signup', {
-    successRedirect : '/', // redirect to the secure profile section
+    successRedirect : '/profile', // redirect to the secure profile section
     failureRedirect : '/signup', // redirect back to the signup page if there is an error
     failureFlash : true // allow flash messages
   }));
@@ -47,19 +47,17 @@ module.exports = function(app, passport, db, multer, ObjectId) {
 
   app.get( "/sci",function(req, res){
     let uId = ObjectId(req.session.passport.user)
+    console.log(uId, "expect empty user");
     db.collection("users").findOne({'_id' : uId}, function(err, users) {
       if (err) throw err;
       db.collection("comments").find().sort({ vote: -1}).toArray((err, result) => {
         db.collection("replies").find().toArray( (err, rplResult) => {
           console.log(rplResult);
-
-
           if (err) return console.log(err)
-
 
           res.render("sci.ejs", {
             comments: result,
-            users : users.local.username,
+            users : users,
             replies : rplResult
           })
         })
@@ -81,10 +79,55 @@ module.exports = function(app, passport, db, multer, ObjectId) {
     res.render("tech.ejs");
   });
 
-  app.get("/engineering", function(req, res) {
-    res.render("engi.ejs");
+  app.get("/article/:id", function(req, res) {
+    let postId = ObjectId(req.params.id)
+     db.collection("demo").find({_id: postId}).toArray((err, result) => {
+       db.collection("commentA").find().toArray((err, resultC) => {
+         db.collection("replies").find().toArray( (err, rplResult) => {
+
+           if (err) return console.log(err)
+           res.render("indie.ejs", {
+             demo: result,
+             commentA : resultC,
+             replies : rplResult,
+             users : req.user
+         })
+
+      })
+    })
+    })
+  });
+  app.post("/commentA", (req, res) => {
+  let uId = ObjectId(req.session.passport.user)
+  console.log(uId);
+  console.log(req.body);
+  let postId = req.body.postId
+  console.log(postId);
+  db.collection("users").findOne({'_id' : uId}, function(err, users) {
+    db.collection("commentA").save({username: users.local.username, msg: req.body.commentA}, (err, result) => {
+
+      if (err) return console.log(err)
+      console.log("saved to DB")
+      res.redirect(`/article/${postId}`)
+
+    })
+  })
   });
 
+  app.post("/replyA", (req, res) => {
+    let postId = req.body.postId
+    console.log(req.body);
+  let commentAId = ObjectId(req.body.commentAId)
+  db.collection("replies").save({
+    commentAId : commentAId,
+    username :req.user.local.username,
+    replyA : req.body.replyA,
+    postId : req.body.postId
+  } )
+  res.redirect(`/article/${postId}`)
+  })
+
+////sci chat
   app.delete('/messages', (req, res) => {
 
     db.collection('comments').findOneAndDelete({_id: ObjectId(req.body._id), msg: req.body.msg}, (err, result) => {//looks at messages collection,s finds and deletes.
@@ -107,14 +150,14 @@ module.exports = function(app, passport, db, multer, ObjectId) {
   });
 
   app.post("/reply", (req, res) => {
-    // console.log(req.body);
-    // console.log(req.user);
+
     let commentId = ObjectId(req.body.commentId)
     db.collection("replies").save({
       commentId : commentId,
       username :req.user.local.username,
       reply : req.body.reply
     } )
+    res.redirect("/sci")
   })
 
 
@@ -177,6 +220,7 @@ module.exports = function(app, passport, db, multer, ObjectId) {
           })
         })
       });
+
   app.get( "/post", function(req, res){
       res.render("post.ejs")
 
