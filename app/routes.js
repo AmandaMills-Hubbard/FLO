@@ -104,7 +104,7 @@ module.exports = function(app, passport, db, multer, ObjectId) {
   let postId = req.body.postId
   console.log(postId);
   db.collection("users").findOne({'_id' : uId}, function(err, users) {
-    db.collection("commentA").save({username: users.local.username, msg: req.body.commentA}, (err, result) => {
+    db.collection("commentA").save({username: users.local.username, msg: req.body.msg}, (err, result) => {
 
       if (err) return console.log(err)
       console.log("saved to DB")

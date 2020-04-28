@@ -20,6 +20,10 @@ header{
   height: 10vh;
 }
 
+.logoH{
+	margin-left: 60%;
+	margin-top: -25%;
+}
 .logo{
   width: 45%;
   float: left;

@@ -24,10 +24,7 @@ header{
 header a{
 	float: left;
 }
-/* .logo{
-width: 45%;
-float: left;
-} */
+
 
 .logo a{
 	text-decoration: none;
@@ -154,6 +151,9 @@ footer{
 	border-radius: 3px;
 }
 
+.secCom{
+	font-family: 'Noto Sans JP', sans-serif;
+}
 .formP{
 	padding-top: 50px;
 	padding-bottom: 50px;
@@ -262,6 +262,17 @@ font-size: 1.2em;
 	color: #5538c7;
 	font-size: 1.5em;
 }
+.engT{
+	font-family: 'Noto Sans JP', sans-serif;
+	line-height: 2em;
+	}
+	.engT h1{
+		color: white;
+		font-size: 1.5em;
+	}
+	.engT p{
+		padding: 20px;
+	}
 .bigIn{
 	font-family: 'Noto Sans JP', sans-serif;
 }
