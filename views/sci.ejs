@@ -3,9 +3,7 @@
 <section class="engT">
 	<div class="container">
 
-		<header >
-			<h1>Sugar rockets</h1>
-		</header>
+		<h1>Sugar Rockets</h1>
 
 		<a href="#" class="image fit"><img src="thumb.jpg" alt="" /></a>
 		<section class="struct">
@@ -33,9 +31,9 @@
 			<h3>Add a comment</h3>
 			<form action="/comments"  method="post">
 				<div class="12u$">
-					<textarea name="msg" id="message" placeholder="Enter your message" rows="6"></textarea>
+					<textarea id="inputTextS" name="msg" id="message" placeholder="Enter your message" rows="6"></textarea>
 				</div>
-				<input type="submit" value="Post">
+				<input id="indButtonS" type="submit" value="Post">
 			</form>
 		</section>
 			<% } %>
@@ -66,9 +64,9 @@
 
 							<li>
 								<form action="/reply"  method="post">
-									<textarea name="reply" rows="5" cols="20"> </textarea>
+									<textarea id="inputTextS" name="reply" rows="5" cols="20"> </textarea>
 									<input type="hidden" name="commentId" value="<%= comments[i]._id %>">
-									<input  class="reply" type="submit" value="reply">
+									<input  id="indButtonS" type="submit" value="reply">
 								</form>
 
 							</li>

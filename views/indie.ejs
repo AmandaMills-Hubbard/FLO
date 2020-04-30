@@ -45,16 +45,14 @@
 
       <div class="bigIn">
 
-
-
         <section class="addCom">
           <h3>Add a comment</h3>
           <form action="/commentA"  method="post">
             <div class="12u$">
-              <textarea name="msg" placeholder="Enter your message" rows="6"></textarea>
+              <textarea class="inputText" name="msg" placeholder="Enter your message" rows="6"></textarea>
             </div>
             <input class="hide" type="text" name="postId" value="<%=demo[0]._id%>">
-            <input type="submit" value="Post">
+            <input class="indButton" type="submit" value="Post">
           </form>
         </section>
 
@@ -85,10 +83,10 @@
 
                     <li>
                       <form action="/replyA"  method="post">
-                        <textarea name="replyA" rows="5" cols="20"> </textarea>
+                        <textarea class="inputText" name="replyA" rows="5" cols="20"> </textarea>
                         <input type="hidden" name="commentAId" value="<%= commentA[i]._id %>">
                         <input class="hide" type="text" name="postId" value="<%=demo[0]._id%>">
-                        <input  class="replyA" type="submit" value="reply">
+                        <input  class="indButton" type="submit" value="Reply">
                       </form>
 
                     </li>
@@ -99,7 +97,7 @@
               </div>
             </section>
             <!-- Footer -->
-            <footer c>&copy Jessie 2020</footer>
+            <footer class="indFoot">&copy Jessie 2020</footer>
 
             <script src="/main.js"></script>
 
