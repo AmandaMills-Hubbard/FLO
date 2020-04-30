@@ -8,12 +8,13 @@
 
 }
 
-html{
+/* html{
 	height: 100vh;
-}
+} */
 body{
 	background-color: rgb(94, 17, 255, .09);
 	margin: 0;
+	height: 100vh;
 }
 
 header{
@@ -21,14 +22,26 @@ header{
 	width: 100%;
 	height: 10vh;
 }
+
 header a{
 	float: left;
 }
-/* .logo{
-width: 45%;
-float: left;
-} */
 
+button{
+	width: 7rem;
+	font-size: 25px;
+	background-color: #5E51D1;
+	color: white;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-weight: bold;
+	border-radius: 3px;
+}
+ input{
+	 background-color: rgb(94, 17, 255, .09);
+	 font-family: 'Noto Sans JP', sans-serif;
+	 border: 1px solid #5538c7;
+	 border-radius: 3px;
+ }
 .logo a{
 	text-decoration: none;
 	color: white;
@@ -36,27 +49,33 @@ float: left;
 	margin: 0rem 5rem;
 }
 .logo a img{
-	height: 85px;
+	padding-top: 15px;
+	height: 80px;
 }
 
 .loginSignupLinks{
-	float: left;
-	width: 50%;
+  float: right;
+  width: 50%;
 }
 
 .loginSignupLinks a{
-	text-decoration: none;
-	color: white;
-	font-family: 'Noto Sans JP', sans-serif;
-	font-size: 25px;
-	font-weight: bold;
-	float: right;
-	padding-right: 35px;
+  text-decoration: none;
+  color: white;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  float: right;
+  padding-left: 20px;
 }
 
 .loginSignupLinks a:hover{
-	color: #808080;
+  color: #808080;
 }
+.goA{
+	font-weight: bold;
+	font-size: 1.3em;
+}
+
 .hero{
 	height: 80vh;
 }
@@ -107,6 +126,20 @@ float: left;
 	font-weight: bold;
 	margin-top: 3rem;
 }
+.logForm{
+	margin-left: 35%;
+	font-family: 'Noto Sans JP', sans-serif;
+}
+.logForm h1{
+	font-weight: bold;
+	padding-top: 20px;
+}
+.logForm button{
+	margin-top: 20px;
+}
+#footS{
+	margin-top: 11%;
+}
 .userI{
 	padding-left: 50px;
 	padding-bottom: 50px;
@@ -116,20 +149,28 @@ float: left;
 footer{
 	background-color: #5538c7;
 	width: 100%;
-	height: 10vh;
+	height: 100px;
 	text-align: center;
 	color: white;
 	font-family: 'Noto Sans JP', sans-serif;
-	margin-top: 10rem;
-	padding-top: 1.2rem;
 	clear: both;
 }
+.downF{
+	margin-top: 25%;
+}
+.downFpro{
 
+}
 .loginFormPage{
 	display: flex;
 	justify-content: center;
+	font-family: 'Noto Sans JP', sans-serif;
 }
-
+#logT{
+	margin-left: 35%;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-weight: bold;
+}
 .loginForm{
 	display: flex;
 	flex-direction: column;
@@ -152,8 +193,12 @@ footer{
 	font-family: 'Noto Sans JP', sans-serif;
 	font-weight: bold;
 	border-radius: 3px;
+	margin-top: 20px;
 }
 
+.secCom{
+	font-family: 'Noto Sans JP', sans-serif;
+}
 .formP{
 	padding-top: 50px;
 	padding-bottom: 50px;
@@ -224,6 +269,15 @@ footer{
 	font-size: 1.5em;
 }
 
+ #indNav{
+	float: left;
+	list-style: none;
+}
+#indNav ul li{
+	float: left;
+	list-style: none;
+}
+
 .weirdo{
 	clear: both;
 	padding-top: 100px;
@@ -241,7 +295,7 @@ footer{
 	margin-left: 45%;
 }
 .profile a h3{
-	margin-left: 75%;
+	float: right;
 }
 .artM{
 	font-family: 'Noto Sans JP', sans-serif;
@@ -262,6 +316,17 @@ font-size: 1.2em;
 	color: #5538c7;
 	font-size: 1.5em;
 }
+.engT{
+	font-family: 'Noto Sans JP', sans-serif;
+	line-height: 2em;
+	}
+	.engT h1{
+		color: white;
+		font-size: 1.5em;
+	}
+	.engT p{
+		padding: 20px;
+	}
 .bigIn{
 	font-family: 'Noto Sans JP', sans-serif;
 }

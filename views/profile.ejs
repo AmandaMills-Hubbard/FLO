@@ -1,4 +1,32 @@
-<%- include('header'); -%>
+<!dOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flo</title>
+  <link rel="shortcut icon" href="logo.png" />
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/0ea786f096.js" crossorigin="anonymous"></script>
+</head>
+<body>
+ <header>
+    <nav>
+      <section class="logo">
+        <a href="/"><img src="images/topL.png" alt="Go to Home Page"></a>
+      </section>
+      <section class="loginSignupLinks">
+        <a href="/profile" action="/profile"> <i class="fas fa-user-ninja"></i> Go to profile</a>
+        <a href="/" action="/">Home</a>
+        <a href="/signup">Logout</a>
+        <a href="/sci"action="/sci">Science</a>
+        <a href="/tech"action="/tech">Tech</a>
+        <a href="/articles" action="/articles"> Articles</a>
+
+      </section>
+    </nav>
+  </header>
+
 
     <section class="profile">
       <h1>Your Profile</h1>
@@ -9,20 +37,25 @@
 
           <% if (users.local.email) { %>
                 <p>
-                    <strong>email</strong>: <%= users.local.email %>
+                    <strong>Email</strong>: <%= users.local.email %>
                     <strong>Username</strong>: <%= users.local.username %>
                 </p>
 
-                <a href="/unlink/local" class="btn btn-default">Remove account</a>
+                <a href="/" class="goA">Remove account</a>
             <% } else { %>
                 <a href="/connect/local" class="btn btn-default">Connect Local</a>
             <% } %>
 
         </section>
 
-          <a href="/post" action="/post"><h3>Add an Article or show your work.</h3></a>
+          <a href="/post" action="/post" class="goA"><h3>Add an Article or show your work.</h3></a>
 
 </section>
 
+<!-- Footer -->
+<footer class="downFpro">&copy Jessie 2020</footer>
 
-  <%- include('footer'); -%>
+<script src="main.js"></script>
+
+</body>
+</html>
