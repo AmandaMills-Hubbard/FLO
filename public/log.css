@@ -6,12 +6,13 @@
 	-webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-html{
+/* html{
 	height: 100vh;
-}
+} */
 body{
   background-color: rgb(94, 17, 255, .09);
 	margin: 0;
+		height: 100vh;
 }
 
 header{
@@ -35,6 +36,11 @@ header{
   font-size: 55px;
   font-weight: bold;
   padding: 0rem 5rem;
+}
+
+.logo a img{
+	padding-top: 15px;
+	height: 80px;
 }
 
 .loginSignupLinks{
@@ -119,8 +125,11 @@ footer{
   text-align: center;
   color: white;
   font-family: 'Noto Sans JP', sans-serif;
-  margin-top: 10rem;
-  padding-top: 1.2rem;
+
+}
+
+.downF{
+	margin-top: 25%;
 }
 
 .loginFormPage{
