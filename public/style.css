@@ -23,6 +23,9 @@ header{
 	height: 10vh;
 }
 
+ul li{
+	list-style: none;
+}
 header a{
 	float: left;
 }
@@ -42,6 +45,10 @@ button{
 	 border: 1px solid #5538c7;
 	 border-radius: 3px;
  }
+ section, div{
+ 	margin: 0rem 5rem;
+ }
+
 .logo a{
 	text-decoration: none;
 	color: white;
@@ -159,7 +166,7 @@ footer{
 	margin-top: 25%;
 }
 .downFpro{
-
+margin-top: 34%;
 }
 .loginFormPage{
 	display: flex;
@@ -277,6 +284,9 @@ footer{
 	float: left;
 	list-style: none;
 }
+.indFoot{
+	margin-top: 25%;
+}
 
 .weirdo{
 	clear: both;
@@ -321,15 +331,59 @@ font-size: 1.2em;
 	line-height: 2em;
 	}
 	.engT h1{
-		color: white;
-		font-size: 1.5em;
+	 	 padding-top: 20px;
+	 	 padding-bottom: 20px;
+	 	 color: #5E51D1;
+		font-size: 2em;
+		font-weight: bold;
+		margin: 0rem 5rem;
 	}
 	.engT p{
 		padding: 20px;
 	}
+	.engT img{
+		border-radius: 3px;
+		height: 500px;	margin: 0rem 5rem;
+	}
+	.engT li input{
+			margin: 0rem 5rem;
+	}
 .bigIn{
 	font-family: 'Noto Sans JP', sans-serif;
 }
+#inputText{
+	background-color: rgb(94, 17, 255, .09);
+	font-family: 'Noto Sans JP', sans-serif;
+	border: 1px solid #5538c7;
+	border-radius: 3px;
+	width: 20%;
+}
+#indButton{
+	width: 7rem;
+	font-size: 25px;
+	background-color: #5E51D1;
+	color: white;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-weight: bold;
+	border-radius: 3px;
+}
+#inputTextS{
+	background-color: rgb(94, 17, 255, .09);
+	font-family: 'Noto Sans JP', sans-serif;
+	border: 1px solid #5538c7;
+	border-radius: 3px;
+	width: 20%;
+}
+#indButtonS{
+	width: 7rem;
+	font-size: 25px;
+	background-color: #5E51D1;
+	color: white;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-weight: bold;
+	border-radius: 3px;
+}
+
 .noArt{
 	display: none;
 }
